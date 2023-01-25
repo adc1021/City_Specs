@@ -1,17 +1,5 @@
 import Example from "./scripts/example";
 
-const handlErrors = (err) => {
-  let errors = []
-  // debugger
-
-  err.array.forEach(element => {
-    errors.push(element)
-  });
-
-  return errors
-}
-
-
 const cityScores = async (city) => {
   // debugger
   await fetch(`https://api.teleport.org/api/urban_areas/slug%3A${city}/scores/`)
@@ -62,4 +50,3 @@ const cityScores = async (city) => {
 // cityScores('denver')
 // cityScores('denver')
 // cityScores('columbus')
-
