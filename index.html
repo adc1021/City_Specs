@@ -11,23 +11,27 @@
   </head>
 
   <body>
-    <section class="hero is-primary is-medium">
+    <section class="hero is-primary is-small">
       <div class="hero-body">
-        <p class="title is-1">City Specs</p>
+        <div class="p-2">
+        <h1 class="box title is-size-1">City Specs</h1>
+      </div>
       </div>
     </section>
-    <select id="city-selector">
-      <option value="houston">Houston</option>
-      <option value="new-york">New York</option>
-      <option value="miami">Miami</option>
-      <option value="richmond">Richmond</option>
-      <option value="charleston">Charleston</option>
-      <option value="atlanta">Atlanta</option>
-    </select>
-    <section class="section is-large">
-      <div style="width: 400px;"><canvas id="acquisitions"></canvas></div>
+    <section class="section is-large p-0 level">
       <script type="module" src="index.js"></script>
-      <div style="width: 600px;"><canvas id="scatter-plot"></canvas></div>
+      <div class="level-left" style="width:600px;"><canvas id="scatter-plot"></canvas></div>
+      <div class="level-right is-flex-direction-column mt-6" style="width: 400px;">
+        <canvas id="acquisitions"></canvas>
+        <select class="mt-2" id="city-selector">
+          <option value="houston">Houston</option>
+          <option value="new-york">New York</option>
+          <option value="miami">Miami</option>
+          <option value="richmond">Richmond</option>
+          <option value="charleston">Charleston</option>
+          <option value="atlanta">Atlanta</option>
+        </select>
+      </div>
 
     </section>
   </body>

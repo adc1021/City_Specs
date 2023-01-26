@@ -3,7 +3,7 @@ import { async } from "regenerator-runtime";
 export const cityScores = async (city) => {
   try {
     const res = await fetch(`https://api.teleport.org/api/urban_areas/slug%3A${city}/scores/`)
-    const data = res.json()
+    const data = await res.json()
     return data
   } catch(err) {
     console.log(err)

@@ -28,7 +28,17 @@ $primary-invert: $gray-green-invert;
 $secondary: $green-blue;
 $tertiary: $brown;
 $tertiary-light: $clay;
+$box-background-color: $primary-invert;
+$box-color: $primary;
 
+.box {
+    width: 25%;
+    background-color: $box-background-color;
+}
+
+.hero.is-primary.title {
+    color: $box-color
+}
 
 // 4. Import the rest of Bulma
 

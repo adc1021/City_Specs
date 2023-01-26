@@ -4,24 +4,21 @@ import { PolarAreaController, ArcElement } from 'chart.js/auto';
 import { getRelativePosition } from 'chart.js/helpers';
 
 export const polarChart = async() => {
-  let selectCity = document.getElementById('city-selector') //
+  let selectCity = document.getElementById('city-selector') // drop down
   let value = selectCity.value
-  let res = await cityScores(value); // the await is preventing dom manipulation
-  // How can I make my chart change on change?
-  const housing = Math.floor(res.categories[0].score_out_of_10)
-  const costOfLiving = Math.floor(res.categories[1].score_out_of_10)
-  const commute = Math.floor(res.categories[5].score_out_of_10)
-  const safety = Math.floor(res.categories[7].score_out_of_10)
-  const healthcare = Math.floor(res.categories[8].score_out_of_10)
-  const education = Math.floor(res.categories[9].score_out_of_10)
+  let res = await cityScores(value);
 
-  selectCity.addEventListener('change', ((e) => {
-    let c = [...e.target.children].find(c => c.selected)
-    res = cityScores(e.target.value)
-    value = e.target.value
+  let housing = Math.floor(res.categories[0].score_out_of_10) //4
+  let costOfLiving = Math.floor(res.categories[1].score_out_of_10) //5
+  let commute = Math.floor(res.categories[5].score_out_of_10)
+  let safety = Math.floor(res.categories[7].score_out_of_10)
+  let healthcare = Math.floor(res.categories[8].score_out_of_10)
+  let education = Math.floor(res.categories[9].score_out_of_10)
+
+  selectCity.addEventListener('change', (async (e) => {
+    let res = await cityScores(e.target.value)
   }))
-
-
+  
   new chartTools.Chart(
     document.getElementById('acquisitions'),
     {
