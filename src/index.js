@@ -7,15 +7,11 @@ import { cityScores } from './scripts/datafetch';
 
 
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded' || 'change', () => {
     (async function() {
+
       let selectCity = document.getElementById('city-selector') //
       let value = selectCity.value
-      selectCity.addEventListener('change', ((e) => {
-        cityScores(e.target.value)
-        value = e.target.value
-      }))
-
       let res = await cityScores(value); // the await is preventing dom manipulation
       // How can I make my chart change on change?
       const housing = Math.floor(res.categories[0].score_out_of_10)
@@ -24,7 +20,14 @@ import { cityScores } from './scripts/datafetch';
       const safety = Math.floor(res.categories[7].score_out_of_10)
       const healthcare = Math.floor(res.categories[8].score_out_of_10)
       const education = Math.floor(res.categories[9].score_out_of_10)
-      console.log(document.getElementById('city-selector'))
+
+      selectCity.addEventListener('change', ((e) => {
+        debugger
+        let c = [...e.target.children].find(c => c.selected)
+        res = cityScores(e.target.value)
+        value = e.target.value
+      }))
+
 
       new chartTools.Chart(
         document.getElementById('acquisitions'),
