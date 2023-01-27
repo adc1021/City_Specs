@@ -11,13 +11,6 @@
   </head>
 
   <body>
-      <div class="moving-header">
-        <div class="bg-right"></div>
-        <div class="bg-left"></div>
-        <div class="bg2-right"></div>
-        <div class="bg3-left"></div>
-        <div class="content"></div>
-      </div>
       <section class="hero is-primary is-small">
         <div class="hero-body">
           <div class="p-2">
@@ -25,10 +18,10 @@
         </div>
         </div>
       </section>
-      <section class="section is-large p-0 level">
+      <section class="section is-large p-0 level is-justify-content-space-evenly">
         <script type="module" src="index.js"></script>
-        <div class="level-left" style="width:600px;"><canvas id="bar-chart"></canvas></div>
-        <div class="level-right is-flex-direction-column mt-6" style="width: 400px;">
+        <div class="level-left background" style="width:900px;"><canvas id="bar-chart"></canvas></div>
+        <div class="level-right is-flex-direction-column mt-6 background" style="width: 400px;">
           <canvas id="acquisitions"></canvas>
           <select class="mt-2" id="city-selector">
             <option value="houston">Houston</option>
@@ -39,9 +32,13 @@
             <option value="atlanta">Atlanta</option>
           </select>
         </div>
-
       </section>
+      <div class="wrap">
+        <svg height="60" width="200" class="svg">
+          <text x="10" y="15" fill="red" transform="rotate(30 20,40)">$</text>
+        </svg>
 
+      </div>
   </body>
   <!-- background by github.com/Yuvrajchandra -->
   </html>
