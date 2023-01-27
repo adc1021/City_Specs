@@ -4,10 +4,9 @@
 @charset "UTF-8";
 .box {
   width: 25%;
-  background-color: #edddd4;
 }
 
-.hero.is-primary.title {
+.hero.is-primary {
   color: #283d3b;
 }
 
