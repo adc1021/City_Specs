@@ -88,7 +88,7 @@ body{
 .svg {
     stroke: $black;
     position: absolute;
-    bottom: 0vh; // this controls where the svgs start spawning
+    bottom: -50vh; // this controls where the svgs start spawning
     transform-style: preserve-3d;
 }
 
