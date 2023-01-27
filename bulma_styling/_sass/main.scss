@@ -19,7 +19,7 @@ $green-blue: #197278;
 $clay: #c44536;
 $brown: #772e25;
 $green: #7ceaa4;
-$purple: #3b3d54;
+$purple: #265e05;
 
 // Update the sans-serif font family
 $family-sans-serif: 'Playfair Display';
@@ -39,15 +39,20 @@ $box-color: $primary;
     // background-color: $box-background-color;
 }
 
-.hero.is-primary {
-    color: $primary
-}
 
+
+.hero.is-primary {
+    color: $primary;
+}
+section {
+    z-index: 1;
+}
 .background {
     background-color: white;
     width: 110%;
     height: 110%;
     border-radius: 6px;
+    z-index: 15;
 }
 
 
@@ -80,33 +85,33 @@ body{
     padding: 30px;
 }
 
-// .svg {
-//     stroke: clay;
-//     position: absolute;
-//     bottom: -100vh;
-//     transform-style: preserve-3d;
-// }
+.svg {
+    stroke: $black;
+    position: absolute;
+    bottom: 0vh; // this controls where the svgs start spawning
+    transform-style: preserve-3d;
+}
 
-// $total: 10;
-// @for $i from 1 through $total {
-//   $scale:random(2) - .4;
+$total: 12; // controls the total number of size variations
+@for $i from 1 through $total {
+  $scale:random(2) - .4;
 
-//   .svg:nth-child(#{$i}){
-//     left:random(120) * 1% - 20;
-//     animation: raise#{$i} 6 + random(15) +s linear infinite;
-//     animation-delay:random(5) - 5 + s;
-//     transform: scale(.3 * $i - .6) rotate(random(360) + deg);
-//     z-index: $i - 7;
-//     filter: blur($i - 6 + px);
+  .svg:nth-child(#{$i}){
+    left:random(120) * 1% - 20;
+    animation: raise#{$i} 6 + random(15) +s linear infinite;
+    animation-delay:random(5) - 5 + s;
+    transform: scale(.03 * $i - .06) rotate(random(360) + deg);
+    z-index: $i;
+    filter: blur($i - 6 + px);
 
-//     @keyframes raise#{$i} {
-//       to{
-//        bottom:150vh;
-//        transform: scale(.3 * $i - .6) rotate(random(360) + deg);
-//       }
-//     }
-//   }
-// }
+    @keyframes raise#{$i} {
+      to{
+       bottom:120vh;// helps control speed of dollar bills through screen
+       transform: scale(.03 * $i - .06) rotate(random(360) + deg);
+      }
+    }
+  }
+}
 // 4. Import the rest of Bulma
 
 @import "../node_modules/bulma/bulma";
