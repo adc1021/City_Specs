@@ -9805,9 +9805,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .hero.is-primary strong {
   color: inherit;
 }
-.hero.is-primary .title {
-  color: #fff;
-}
+
 .hero.is-primary .subtitle {
   color: rgba(255, 255, 255, 0.9);
 }

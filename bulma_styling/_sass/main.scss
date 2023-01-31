@@ -39,14 +39,23 @@ $box-color: $primary;
     // background-color: $box-background-color;
 }
 
-
-
-.hero.is-primary {
-    color: $primary;
+.hero.is-primary .title {
+    color: $secondary;
 }
+
+title-background {
+    width: 25%;
+    background-color: $primary-invert;
+}
+
+.box .title {
+    color: $secondary;
+}
+
 section {
     z-index: 1;
 }
+
 .background {
     background-color: white;
     width: 110%;
