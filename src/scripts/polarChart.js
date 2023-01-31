@@ -89,26 +89,26 @@ export const polarChart = async() => {
             label: `${value.toUpperCase()}`,
             data: [housing, costOfLiving, commute, safety, healthcare, education],
             backgroundColor: [
-              'rgb(255, 99, 132)',
-              'rgb(75, 192, 192)',
-              'rgb(255, 205, 86)',
-              'rgb(201, 203, 207)',
-              'rgb(54, 162, 235)',
-              ' #FFA500'
+              'rgb(255, 99, 132, .5)',
+              'rgb(75, 192, 192, .5)',
+              'rgb(255, 205, 86, .5)',
+              'rgb(201, 203, 207, .5)',
+              'rgb(54, 162, 235, .5)',
+              'rgb(255, 160, 0, .5)',
+              'rgb(15, 63, 3, .5)'
             ]
           }]
         }
       }
       )
 
-      addData(chart, value, info)
   }
 
 
-  function addData(chart, label, data) {
-    chart.data.labels.push(label);
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.push(data);
-    });
-    chart.update();
-}
+//   function addData(chart, label, data) {
+//     chart.data.labels.push(label);
+//     chart.data.datasets.forEach((dataset) => {
+//         dataset.data.push(data);
+//     });
+//     chart.update();
+// }
