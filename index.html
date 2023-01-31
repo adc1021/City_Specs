@@ -14,14 +14,14 @@
       <section class="hero is-primary is-small">
         <div class="hero-body">
           <div class="p-2">
-          <h1 class="box title is-size-1 has-text-primary">City Specs 🏢</h1>
+          <h1 class="box title is-size-1 has-text-primary">City Specs</h1>
         </div>
         </div>
       </section>
       <section class="section is-large p-0 level is-justify-content-space-evenly">
         <script type="module" src="index.js"></script>
         <div class="level-left background" style="width:900px;"><canvas id="bar-chart"></canvas></div>
-        <div class="level-right is-flex-direction-column mt-6 background" style="width: 400px;">
+        <div class="level-right is-flex-direction-column mt-6 background" id="polar-container" style="width: 400px;">
           <canvas id="acquisitions"></canvas>
           <select class="mt-2" id="city-selector">
             <option value="houston">Houston</option>
