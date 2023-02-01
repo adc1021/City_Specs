@@ -42,6 +42,35 @@ $box-color: $primary;
     color: rgb(15, 63, 3)
 }
 
+.box1 {
+  position: absolute;
+  z-index: 20;
+  background-color: red;
+  top: 15%;
+  left: 2%;
+  width: 300px;
+  background: #00bfb6;
+  padding: 20px;
+  text-align: center;
+  font-weight: 900;
+  color: #fff;
+  font-family: arial;
+  border-radius: 5px;
+}
+
+.sb4:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #00bfb6;
+  border-bottom: 10px solid transparent;
+  right: 50px;
+  top: 86px;
+}
+
 .stripe-text {
     position: relative;
     $random-text: 'City Specs';
