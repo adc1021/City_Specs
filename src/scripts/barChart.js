@@ -6,7 +6,7 @@ import * as data from '../housing_data.json'
 
 export const barChart = async() => {
   const ctx = document.getElementById('bar-chart')
-
+  
   new chartTools.Chart(ctx, {
     type: 'bar',
     data: {
