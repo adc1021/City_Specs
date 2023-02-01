@@ -1,0 +1,169 @@
+@charset "utf-8";
+@import 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700i,900i';
+
+//Override any bulma default code by writing variables before the import statement
+// /*
+h1.box{
+    border: 3px solid rgba(172, 170, 190, 1);
+    font-family: 'Catamaran', sans-serif;
+}
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+// 2. Set your own initial variables
+// Update the blue shade, used for links
+// Add pink and its invert
+$gray-green: #283d3b;
+$gray-green-invert: #edddd4;
+$green-blue: #197278;
+$clay: #c44536;
+$brown: #772e25;
+$green: #7ceaa4;
+$purple: #52055e;
+$pink: #f12eca;
+$yellow: #f1ee37;
+
+// Update the sans-serif font family
+$family-sans-serif: 'Catamaran';
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $gray-green;
+$primary-invert: $gray-green-invert;
+$dark: $brown;
+$tertiary: $brown;
+$tertiary-light: $clay;
+$box-background-color: $primary-invert;
+$box-color: $primary;
+
+.box {
+    width: 350px;
+    color: rgb(15, 63, 3)
+}
+
+.stripe-text {
+    position: relative;
+    $random-text: 'City Specs';
+    $stroke-width: 5 * 0.05;
+     font-size: 5px;
+     text-transform: uppercase;
+    font-weight: 900;
+    font-family: 'Catamaran', sans-serif;
+    font-style: italic;
+    &:after {
+      position: absolute;
+      left: 20px;
+      content: $random-text;
+      $stripe-size: 20px;
+      background: -webkit-repeating-linear-gradient(
+        180deg,
+        $primary,
+        $primary $stripe-size,
+        $primary-invert $stripe-size,
+        $primary-invert $stripe-size * 2,
+        $tertiary-light $stripe-size * 2,
+        $tertiary-light $stripe-size * 3,
+        $green $stripe-size * 3,
+        $green $stripe-size * 4
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-stroke-width: $stroke-width;
+      -webkit-text-stroke-color: white;
+    }
+  }
+
+title-background {
+    width: 25%;
+    background-color: $primary-invert;
+}
+
+h1 {
+    text-shadow: 2px 4px 4px rgba(46, 91, 173, 0.6);
+}
+
+section {
+    z-index: 1;
+}
+
+.background {
+    background-color: white;
+    width: 110%;
+    height: 110%;
+    border-radius: 6px;
+    z-index: 15;
+}
+
+#modal-trigger {
+  background: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Playfair Display', serif;
+    color: rgba(172, 170, 190, 1);
+    text-rendering: optimizeLegibility;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $primary-invert;
+    font-size: 14px;
+    overflow: hidden
+}
+
+.wrap {
+    perspective-origin: 50% 50%;
+}
+
+.page{
+    margin: 3%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+}
+
+.hero .container {
+  flex-grow: 0;
+}
+
+.svg {
+    stroke: $black;
+    position: absolute;
+    bottom: -50vh; // this controls where the svgs start spawning
+    transform-style: preserve-3d;
+}
+
+@media (min-width: 1024px) {
+  .section.is-large {
+    min-height: 600px;
+  }
+}
+
+$total: 12; // controls the total number of size variations
+@for $i from 1 through $total {
+  $scale:random(2) - .4;
+
+  .svg:nth-child(#{$i}){
+    left:random(120) * 1% - 20;
+    animation: raise#{$i} 6 + random(15) +s linear infinite;
+    animation-delay:random(5) - 5 + s;
+    transform: scale(.03 * $i - .06) rotate(random(360) + deg);
+    z-index: $i;
+    filter: blur($i - 6 + px);
+
+    @keyframes raise#{$i} {
+      to{
+       bottom:120vh;// helps control speed of dollar bills through screen
+       transform: scale(.03 * $i - .06) rotate(random(360) + deg);
+      }
+    }
+  }
+}
+// 4. Import the rest of Bulma
+
+@import "../node_modules/bulma/bulma";

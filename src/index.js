@@ -1,34 +1,15 @@
-import Example from "./scripts/example";
-
-const handlErrors = (err) => {
-  let errors = []
-  // debugger
-
-  err.array.forEach(element => {
-    errors.push(element)
-  });
-
-  return errors
-}
+import * as chartTools from 'chart.js/auto'
+import { PolarAreaController, ArcElement } from 'chart.js/auto';
+import { getRelativePosition } from 'chart.js/helpers';
+import { cityScores } from './scripts/datafetch';
+import { polarChart } from './scripts/polarChart';
+import { barChart } from './scripts/barChart';
 
 
-const cityScores = async (city) => {
-  // debugger
-  await fetch(`https://api.teleport.org/api/urban_areas/slug%3A${city}/scores/`)
-  .then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            throw response;
-          }
-        })
-  .then((data) => {
-    debugger
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    polarChart();
+    barChart();
   })
-}
-
-console.log(cityScores('portland-me'))
-
-console.log(cityScores('jacksonville'))
-
-// console.log(cityScores('chuckville'))
