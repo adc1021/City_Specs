@@ -138,6 +138,12 @@ body{
     transform-style: preserve-3d;
 }
 
+@media (min-width: 1024px) {
+  .section.is-large {
+    min-height: 600px;
+  }
+}
+
 $total: 12; // controls the total number of size variations
 @for $i from 1 through $total {
   $scale:random(2) - .4;
