@@ -47,7 +47,7 @@ $box-color: $primary;
   z-index: 20;
   background-color: red;
   top: 15%;
-  left: 2%;
+  left: 10px;
   width: 300px;
   background: #00bfb6;
   padding: 20px;
@@ -68,7 +68,7 @@ $box-color: $primary;
   border-top: 10px solid #00bfb6;
   border-bottom: 10px solid transparent;
   right: 50px;
-  top: 86px;
+  top: 110px;
 }
 
 .stripe-text {
@@ -173,6 +173,11 @@ body{
   .section.is-large {
     min-height: 600px;
   }
+
+  .box1 {
+    top: 12%;
+    left: 5%;
+  }
 }
 
 $total: 12; // controls the total number of size variations
@@ -230,6 +235,7 @@ $total: 12; // controls the total number of size variations
   height: 100%;
   backface-visibility: hidden;
 }
+
 
 .card__face--front {
   background: white;

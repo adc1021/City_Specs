@@ -24,20 +24,25 @@
         <i class="fa-solid fa-circle-info fa-2x" id="modal-trigger"></i>
       </div>
     </section>
-    <div class="box1 sb4">What to learn more? Click the Chart to get more information!</div>
+    <div class="box1 sb4"><p>What to learn more?</p>
+      <p>Click the Chart to get more information!</p></div>
     <div class="container">
       <section class="section is-large p-0 level is-justify-content-space-evenly">
-        <div class="scene scene--card">
+        <div class="scene scene--card" onclick="TestsFunction()">
           <div class="card">
             <div class="card__face card__face--front">
               <div class="level-left background is-flex-direction-column" style="width:900px;">
-                <div class="">
-                  <h3>Care to learn more about one of these properties?</h3>
-                </div>
                 <canvas id="bar-chart"></canvas>
               </div>
             </div>
-            <div class="card__face card__face--back"></div>
+            <div class="card__face card__face--back">
+              <div id="TestsDiv" style="display:none">
+                tests here!
+                <p>Test There</p>
+                <p>Test There</p>
+                <p>Test There</p>
+            </div>
+            </div>
           </div>
         </div>
         <div class="level-right is-flex-direction-column background" id="polar-container" style="width: 400px;">
@@ -86,6 +91,22 @@
           card.classList.toggle('is-flipped');
           });
         });
+
+        function TestsFunction() {
+          let T = document.getElementById("TestsDiv");
+          let graph = document.getElementById("bar-chart")
+          let backFace = document.getElementById("card__face")
+          // debugger
+          if(T.style.display === "none"){
+            T.style.display = "block";
+            graph.style.display = "none"
+            // graph.style.height = "450px" // <-- Set it to block
+          } else if(T.style.display ==="block") {
+            T.style.display = "none"
+            graph.style.display = "block"
+            // backFace.style.height = "450px"
+          }
+        }
         // card flip animation : codepen by Amit Mondal
       </script>
   </body>
