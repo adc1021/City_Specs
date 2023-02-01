@@ -95,7 +95,9 @@ section {
     z-index: 15;
 }
 
-
+#modal-trigger {
+  background: none;
+}
 
 * {
     box-sizing: border-box;
@@ -123,6 +125,10 @@ body{
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
+}
+
+.hero .container {
+  flex-grow: 0; 
 }
 
 .svg {

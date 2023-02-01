@@ -10,11 +10,18 @@ export const barChart = async() => {
   new chartTools.Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Houston', 'New York', 'Miami', 'Richmond','Los Angeles', 'Charleston', 'Atlanta', 'Seattle'],
+      labels: ['Atlanta', 'Albuquerque', 'Charleston', 'Chicago','Houston',
+      'Los Angeles', 'Miami', 'New York', 'Richmond', 'Seattle'],
       datasets: [{
         label: 'Listing Price',
-        data: [data.houstonHousing.price, data.nyHousing.price, data.miamiHousing.price, data.richmondHousing.price, data.laHousing.price, data.charlestonHousing.price, data.altantaHousing.price, data.seattleHousing.price],
-        borderWidth: 1
+        data: [data.altantaHousing.price, data.albuquerqueHousing.price,
+        data.charlestonHousing.price, data.chicagoHousing.price, data.houstonHousing.price,
+          data.laHousing.price, data.miamiHousing.price, data.nyHousing.price,
+          data.richmondHousing.price, data.seattleHousing.price],
+        borderWidth: 1,
+        backgroundColor: [
+          'rgba(75, 192, 192, 0.7)',
+      ],
       }],
     },
     options: {

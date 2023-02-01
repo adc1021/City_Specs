@@ -17,42 +17,6 @@ export const polarChart = async() => {
   }))
 
   generateChart(_res, value)
-  // let housing = Math.floor(_res.categories[0].score_out_of_10) //4
-  // let costOfLiving = Math.floor(_res.categories[1].score_out_of_10) //5
-  // let commute = Math.floor(_res.categories[5].score_out_of_10)
-  // let safety = Math.floor(_res.categories[7].score_out_of_10)
-  // let healthcare = Math.floor(_res.categories[8].score_out_of_10)
-  // let education = Math.floor(_res.categories[9].score_out_of_10)
-
-
-  // new chartTools.Chart(
-  //   document.getElementById('acquisitions'),
-  //   {
-  //     type: 'polarArea',
-  //     data: {
-  //       labels: [
-  //         'Housing',
-  //         'Cost of Living',
-  //         'Commute',
-  //         'Safety',
-  //         'Healthcare',
-  //         'Education'
-  //       ],
-  //       datasets: [{
-  //         label: `${value.toUpperCase()}`,
-  //         data: [housing, costOfLiving, commute, safety, healthcare, education],
-  //         backgroundColor: [
-  //           'rgb(255, 99, 132)',
-  //           'rgb(75, 192, 192)',
-  //           'rgb(255, 205, 86)',
-  //           'rgb(201, 203, 207)',
-  //           'rgb(54, 162, 235)',
-  //           ' #FFA500'
-  //         ]
-  //       }]
-  //     }
-  //   }
-  //   );
   };
 
 
@@ -102,13 +66,20 @@ export const polarChart = async() => {
       }
       )
 
+        // Functions to open and close a modal
+        let modalButton = document.getElementById('modal-trigger')
+        let deleteButton = document.getElementById('delete')
+
+        modalButton.addEventListener('click', () => {
+          let intro = document.getElementById('intro-modal')
+          intro.classList.add('is-active')
+        })
+
+        deleteButton.addEventListener('click', () => {
+          let intro = document.getElementById('intro-modal')
+          intro.classList.remove('is-active')
+        })
+
+        // Add a click event on buttons to open a specific
+
   }
-
-
-//   function addData(chart, label, data) {
-//     chart.data.labels.push(label);
-//     chart.data.datasets.forEach((dataset) => {
-//         dataset.data.push(data);
-//     });
-//     chart.update();
-// }
