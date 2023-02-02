@@ -28,36 +28,33 @@
       <p>Click the Chart to get more information!</p></div>
     <div class="container">
       <section class="section is-large p-0 level is-justify-content-space-evenly">
+        <div class="level-left background is-flex-direction-column" style="width:900px;">
+          <canvas id="bar-chart"></canvas>
+        </div>
         <div class="scene scene--card" onclick="TestsFunction()">
           <div class="card">
             <div class="card__face card__face--front">
-              <div class="level-left background is-flex-direction-column" style="width:900px;">
-                <canvas id="bar-chart"></canvas>
+              <div class="level-right is-flex-direction-column background" id="polar-container" style="width: 400px;">
+                <select class="mt-2" id="city-selector">
+                  <option value="atlanta">Atlanta</option>
+                  <option value="albuquerque">Albuquerque</option>
+                  <option value="charleston">Charleston</option>
+                  <option value="chicago">Chicago</option>
+                  <option value="houston">Houston</option>
+                  <option value="los-angeles">Los Angeles</option>
+                  <option value="miami">Miami</option>
+                  <option value="new-york">New York</option>
+                  <option value="richmond">Richmond</option>
+                  <option value="seattle">Seattle</option>
+                </select>
               </div>
             </div>
             <div class="card__face card__face--back">
               <div id="TestsDiv" style="display:none">
-                tests here!
-                <p>Test There</p>
-                <p>Test There</p>
-                <p>Test There</p>
-            </div>
+                <img class="property-img" src="https://photos.zillowstatic.com/fp/1bcfc530ae43467c99ff085a5b433393-uncropped_scaled_within_1536_1152.webp" />
+              </div>
             </div>
           </div>
-        </div>
-        <div class="level-right is-flex-direction-column background" id="polar-container" style="width: 400px;">
-          <select class="mt-2" id="city-selector">
-            <option value="atlanta">Atlanta</option>
-            <option value="albuquerque">Albuquerque</option>
-            <option value="charleston">Charleston</option>
-            <option value="chicago">Chicago</option>
-            <option value="houston">Houston</option>
-            <option value="los-angeles">Los Angeles</option>
-            <option value="miami">Miami</option>
-            <option value="new-york">New York</option>
-            <option value="richmond">Richmond</option>
-            <option value="seattle">Seattle</option>
-          </select>
         </div>
       </section>
     </div>
@@ -79,9 +76,24 @@
             <button id="delete" aria-label="close"><i class="fa-solid fa-xmark"></i></button>
           </header>
           <section class="modal-card-body">
+            <p>
+              &#x2022; City Specs displays data for cities across the United States
+            </p>
+            <p>
+              &#x2022; The bar graph provides listing prices for homes that have a property
+              size of roughly 2500 sq ft.
+            </p>
+            <p>
+              &#x2022; The chart to the right displays scores for different urban
+              areas provided by the Teleport API. Each score is out of 10. 1 being
+              a poor performer and 10 being excellent.
+            </p>
+            <p>
+              &#x2022; If you'd like to get more information about any of the specific properties,
+              simply click on the graph
+            </p>
           </section>
         </div>
-        <button class="modal-close is-large" aria-label="close"></button>
       </div>
       <script alt="event listener for card flip animation">
         let cards = document.querySelectorAll('.card');
@@ -94,7 +106,7 @@
 
         function TestsFunction() {
           let T = document.getElementById("TestsDiv");
-          let graph = document.getElementById("bar-chart")
+          let graph = document.getElementById("polar-container")
           let backFace = document.getElementById("card__face")
           // debugger
           if(T.style.display === "none"){

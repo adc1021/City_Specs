@@ -1,7 +1,7 @@
 import { cityScores } from "./datafetch";
 import * as chartTools from 'chart.js/auto'
 import { PolarAreaController, ArcElement } from 'chart.js/auto';
-import { getRelativePosition } from 'chart.js/helpers';
+import { getRelativePosition, toDegrees } from 'chart.js/helpers';
 
 export const polarChart = async() => {
   let selectCity = document.getElementById('city-selector') // drop down
@@ -21,6 +21,7 @@ export const polarChart = async() => {
 
 
   const generateChart = (data, value) => {
+    console.log(data.summary)
     let housing = Math.floor(data.categories[0].score_out_of_10) //4
     let costOfLiving = Math.floor(data.categories[1].score_out_of_10) //5
     let commute = Math.floor(data.categories[5].score_out_of_10)
@@ -35,6 +36,29 @@ export const polarChart = async() => {
     // polarDiv.appendChild(canvas)
     polarDiv.insertBefore(canvas, firstChild)
     let info = { housing, costOfLiving, commute, safety, healthcare, education }
+
+    // const thresholdLines = {
+    //   id: 'thresholdLines',
+    //   afterDatasetsDraw(chart, args, options) {
+    //     const { ctx, chartArea: {top, bottom, left, right, width, height}, scales: {r} } = chart;
+
+    //     console.log(r)
+    //     const trueHeight = r.yCenter - top;
+    //     const radius = ((trueHeight / r.end) * options.thresholdValue) - (options.thresholdValue / 2);
+    //     const angle = Math.PI / 180;
+
+    //     ctx.save();
+    //     ctx.beginPath();
+    //     ctx.lineWidth = 1;
+    //     ctx.strokeStyle = options.thresholdColor;
+    //     // ctx.arc(x, y, radius, angleS, angleE, counterClockwise)
+    //     ctx.arc(r.xCenter, r.yCenter, radius, angle * 0, angle * 360, false)
+    //     ctx.stroke();
+    //     ctx.closePath();
+    //     ctx.restore();
+    //   }
+    // }
+
 
      let chart = new chartTools.Chart(
       document.getElementById('acquisitions'),
@@ -62,7 +86,16 @@ export const polarChart = async() => {
               'rgb(15, 63, 3, .5)'
             ]
           }]
-        }
+        },
+        // options: {
+        //   plugins: {
+        //     thresholdLines: {
+        //       thresholdValue: 8,
+        //       thresholdColor: 'rgb(255, 99, 132, .5)'
+        //     }
+        //   }
+        // },
+        // plugins: [thresholdLines]
       }
       )
 
