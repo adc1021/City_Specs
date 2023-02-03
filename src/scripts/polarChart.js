@@ -2,6 +2,8 @@ import { cityScores } from "./datafetch";
 import * as chartTools from 'chart.js/auto'
 import { PolarAreaController, ArcElement } from 'chart.js/auto';
 import { getRelativePosition, toDegrees } from 'chart.js/helpers';
+import { initMap } from "./map";
+import * as data from '../housing_data.json'
 
 export const polarChart = async() => {
   let selectCity = document.getElementById('city-selector') // drop down
@@ -9,10 +11,13 @@ export const polarChart = async() => {
   let res = await cityScores(value);
   let _res = res
   selectCity.addEventListener('change', (async (e) => {
-    _res = await cityScores(e.target.value)
+    let city = e.target.value
+    _res = await cityScores(city)
     let canvasTag = document.getElementById('acquisitions')
     canvasTag.remove()
-    generateChart(_res, e.target.value)
+    generateChart(_res, city)
+    let map = document.getElementById("map")
+
   }))
 
   generateChart(_res, value)
@@ -34,27 +39,6 @@ export const polarChart = async() => {
     // polarDiv.appendChild(canvas)
     polarDiv.insertBefore(canvas, firstChild)
     let info = { housing, costOfLiving, commute, safety, healthcare, education }
-
-    // const thresholdLines = {
-    //   id: 'thresholdLines',
-    //   afterDatasetsDraw(chart, args, options) {
-    //     const { ctx, chartArea: {top, bottom, left, right, width, height}, scales: {r} } = chart;
-
-    //     const trueHeight = r.yCenter - top;
-    //     const radius = ((trueHeight / r.end) * options.thresholdValue) - (options.thresholdValue / 2);
-    //     const angle = Math.PI / 180;
-
-    //     ctx.save();
-    //     ctx.beginPath();
-    //     ctx.lineWidth = 1;
-    //     ctx.strokeStyle = options.thresholdColor;
-    //     // ctx.arc(x, y, radius, angleS, angleE, counterClockwise)
-    //     ctx.arc(r.xCenter, r.yCenter, radius, angle * 0, angle * 360, false)
-    //     ctx.stroke();
-    //     ctx.closePath();
-    //     ctx.restore();
-    //   }
-    // }
 
 
      let chart = new chartTools.Chart(

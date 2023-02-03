@@ -83,7 +83,9 @@
     "bedrooms": 4,
     "bathrooms": 2,
     "squareFootage": 2198,
-    "address": "2704 Palo Alto Dr NE, Albuquerque, NM 87112"
+    "address": "2704 Palo Alto Dr NE, Albuquerque, NM 87112",
+    "lat": 35.11088,
+    "lng": -106.49516
 },
 "seattle":{
     "price": 999500,

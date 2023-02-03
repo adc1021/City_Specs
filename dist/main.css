@@ -48,7 +48,7 @@ h1.box {
   border-top: 10px solid #00bfb6;
   border-bottom: 10px solid transparent;
   right: 50px;
-  top: 110px;
+  top: 135px;
 }
 
 .stripe-text {
@@ -148,192 +148,12 @@ body {
     min-height: 600px;
   }
   .box1 {
-    top: 12%;
+    top: 10%;
     left: 5%;
   }
 }
-.svg:nth-child(1) {
-  left: 19%;
-  animation: raise1 14s linear infinite;
-  animation-delay: -4s;
-  transform: scale(-0.03) rotate(117deg);
-  z-index: 1;
-  filter: blur(-5px);
-}
-@keyframes raise1 {
-  to {
-    bottom: 120vh;
-    transform: scale(-0.03) rotate(217deg);
-  }
-}
-
-.svg:nth-child(2) {
-  left: 45%;
-  animation: raise2 17s linear infinite;
-  animation-delay: -1s;
-  transform: scale(0) rotate(266deg);
-  z-index: 2;
-  filter: blur(-4px);
-}
-@keyframes raise2 {
-  to {
-    bottom: 120vh;
-    transform: scale(0) rotate(128deg);
-  }
-}
-
-.svg:nth-child(3) {
-  left: 94%;
-  animation: raise3 14s linear infinite;
-  animation-delay: 0s;
-  transform: scale(0.03) rotate(238deg);
-  z-index: 3;
-  filter: blur(-3px);
-}
-@keyframes raise3 {
-  to {
-    bottom: 120vh;
-    transform: scale(0.03) rotate(55deg);
-  }
-}
-
-.svg:nth-child(4) {
-  left: 63%;
-  animation: raise4 13s linear infinite;
-  animation-delay: 0s;
-  transform: scale(0.06) rotate(332deg);
-  z-index: 4;
-  filter: blur(-2px);
-}
-@keyframes raise4 {
-  to {
-    bottom: 120vh;
-    transform: scale(0.06) rotate(74deg);
-  }
-}
-
-.svg:nth-child(5) {
-  left: -15%;
-  animation: raise5 7s linear infinite;
-  animation-delay: 0s;
-  transform: scale(0.09) rotate(200deg);
-  z-index: 5;
-  filter: blur(-1px);
-}
-@keyframes raise5 {
-  to {
-    bottom: 120vh;
-    transform: scale(0.09) rotate(11deg);
-  }
-}
-
-.svg:nth-child(6) {
-  left: 24%;
-  animation: raise6 17s linear infinite;
-  animation-delay: -2s;
-  transform: scale(0.12) rotate(222deg);
-  z-index: 6;
-  filter: blur(0px);
-}
-@keyframes raise6 {
-  to {
-    bottom: 120vh;
-    transform: scale(0.12) rotate(10deg);
-  }
-}
-
-.svg:nth-child(7) {
-  left: 33%;
-  animation: raise7 12s linear infinite;
-  animation-delay: -2s;
-  transform: scale(0.15) rotate(232deg);
-  z-index: 7;
-  filter: blur(1px);
-}
-@keyframes raise7 {
-  to {
-    bottom: 120vh;
-    transform: scale(0.15) rotate(304deg);
-  }
-}
-
-.svg:nth-child(8) {
-  left: 10%;
-  animation: raise8 9s linear infinite;
-  animation-delay: -4s;
-  transform: scale(0.18) rotate(9deg);
-  z-index: 8;
-  filter: blur(2px);
-}
-@keyframes raise8 {
-  to {
-    bottom: 120vh;
-    transform: scale(0.18) rotate(208deg);
-  }
-}
-
-.svg:nth-child(9) {
-  left: 13%;
-  animation: raise9 20s linear infinite;
-  animation-delay: 0s;
-  transform: scale(0.21) rotate(309deg);
-  z-index: 9;
-  filter: blur(3px);
-}
-@keyframes raise9 {
-  to {
-    bottom: 120vh;
-    transform: scale(0.21) rotate(260deg);
-  }
-}
-
-.svg:nth-child(10) {
-  left: 73%;
-  animation: raise10 15s linear infinite;
-  animation-delay: -2s;
-  transform: scale(0.24) rotate(54deg);
-  z-index: 10;
-  filter: blur(4px);
-}
-@keyframes raise10 {
-  to {
-    bottom: 120vh;
-    transform: scale(0.24) rotate(305deg);
-  }
-}
-
-.svg:nth-child(11) {
-  left: 87%;
-  animation: raise11 9s linear infinite;
-  animation-delay: -3s;
-  transform: scale(0.27) rotate(274deg);
-  z-index: 11;
-  filter: blur(5px);
-}
-@keyframes raise11 {
-  to {
-    bottom: 120vh;
-    transform: scale(0.27) rotate(267deg);
-  }
-}
-
-.svg:nth-child(12) {
-  left: 12%;
-  animation: raise12 15s linear infinite;
-  animation-delay: -2s;
-  transform: scale(0.3) rotate(297deg);
-  z-index: 12;
-  filter: blur(6px);
-}
-@keyframes raise12 {
-  to {
-    bottom: 120vh;
-    transform: scale(0.3) rotate(342deg);
-  }
-}
-
 .listing-info {
-  background-color: #cedbdb;
+  background-color: #dae7e7;
 }
 
 .scene {
@@ -374,6 +194,20 @@ body {
 .card__face--back {
   background: white;
   transform: rotateY(180deg);
+}
+
+#card-button {
+  border: 0.0625rem solid #283d3b;
+  border-radius: 5px;
+  padding: 4mm 6mm;
+  background-color: white;
+  transition: 1s;
+}
+
+#card-button:hover {
+  background-color: #dae7e7;
+  color: red;
+  cursor: pointer;
 }
 
 /*! bulma.io v0.9.4 | MIT License | github.com/jgthms/bulma */
