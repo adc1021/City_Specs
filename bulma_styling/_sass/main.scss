@@ -15,11 +15,12 @@ h1.box{
 // Add pink and its invert
 $gray-green: #283d3b;
 $gray-green-invert: #edddd4;
-$off-white: #cedbdb;
+$off-white: #dae7e7;
 $green-blue: #197278;
 $clay: #c44536;
 $brown: #772e25;
 $green: #7ceaa4;
+$green-hover: #54b879;
 $purple: #52055e;
 $pink: #f12eca;
 $yellow: #f1ee37;
@@ -68,7 +69,7 @@ $box-color: $primary;
   border-top: 10px solid #00bfb6;
   border-bottom: 10px solid transparent;
   right: 50px;
-  top: 110px;
+  top: 135px;
 }
 
 .stripe-text {
@@ -126,12 +127,24 @@ section {
     box-shadow: 0 0.5em 1em 0.625em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
 }
 
+#map {
+  height: 450px;
+  width: 900px;
+  overflow: hidden !important
+}
+
+
 #modal-trigger {
   background: none;
 }
 
 * {
     box-sizing: border-box;
+}
+
+.property-img {
+  height: 25%;
+  width: 25%
 }
 
 body{
@@ -177,31 +190,11 @@ body{
   }
 
   .box1 {
-    top: 12%;
+    top: 10%;
     left: 5%;
   }
 }
 
-$total: 12; // controls the total number of size variations
-@for $i from 1 through $total {
-  $scale:random(2) - .4;
-
-  .svg:nth-child(#{$i}){
-    left:random(120) * 1% - 20;
-    animation: raise#{$i} 6 + random(15) +s linear infinite;
-    animation-delay:random(5) - 5 + s;
-    transform: scale(.03 * $i - .06) rotate(random(360) + deg);
-    z-index: $i;
-    filter: blur($i - 6 + px);
-
-    @keyframes raise#{$i} {
-      to{
-       bottom:120vh;// helps control speed of dollar bills through screen
-       transform: scale(.03 * $i - .06) rotate(random(360) + deg);
-      }
-    }
-  }
-}
 
 .listing-info {
   background-color: $off-white
@@ -247,6 +240,21 @@ $total: 12; // controls the total number of size variations
   background: white;
   transform: rotateY(180deg);
 }
+
+#card-button {
+  border: 0.0625rem solid $primary;
+  border-radius: 5px;
+  padding: 4mm 6mm;
+  background-color: white;
+  transition: 1s;
+}
+
+#card-button:hover {
+  background-color: $off-white;
+  color: red;
+  cursor: pointer;
+}
+
 
 // 4. Import the rest of Bulma
 

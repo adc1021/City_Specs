@@ -1,19 +1,23 @@
 import { cityScores } from "./datafetch";
 import * as chartTools from 'chart.js/auto'
 import { PolarAreaController, ArcElement } from 'chart.js/auto';
-import { getRelativePosition } from 'chart.js/helpers';
+import { getRelativePosition, toDegrees } from 'chart.js/helpers';
+import { initMap } from "./map";
+import * as data from '../housing_data.json'
 
 export const polarChart = async() => {
   let selectCity = document.getElementById('city-selector') // drop down
   let value = selectCity.value
-  console.log(value)
   let res = await cityScores(value);
   let _res = res
   selectCity.addEventListener('change', (async (e) => {
-    _res = await cityScores(e.target.value)
+    let city = e.target.value
+    _res = await cityScores(city)
     let canvasTag = document.getElementById('acquisitions')
     canvasTag.remove()
-    generateChart(_res, e.target.value)
+    generateChart(_res, city)
+    let map = document.getElementById("map")
+
   }))
 
   generateChart(_res, value)
@@ -35,6 +39,7 @@ export const polarChart = async() => {
     // polarDiv.appendChild(canvas)
     polarDiv.insertBefore(canvas, firstChild)
     let info = { housing, costOfLiving, commute, safety, healthcare, education }
+
 
      let chart = new chartTools.Chart(
       document.getElementById('acquisitions'),
@@ -62,7 +67,16 @@ export const polarChart = async() => {
               'rgb(15, 63, 3, .5)'
             ]
           }]
-        }
+        },
+        // options: {
+        //   plugins: {
+        //     thresholdLines: {
+        //       thresholdValue: 8,
+        //       thresholdColor: 'rgb(255, 99, 132, .5)'
+        //     }
+        //   }
+        // },
+        // plugins: [thresholdLines]
       }
       )
 

@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
     <script src="https://kit.fontawesome.com/2687a23fd5.js" crossorigin="anonymous"></script>
+    <script src="./src/scripts/map.js"></script>
     <title>City Specs</title>
   </head>
 
   <body>
+
+
     <section class="hero is-primary is-small is-flex-direction-row is-align-items-center">
       <div class="container is-align-self-center">
         <div class="hero-body">
@@ -24,11 +27,13 @@
         <i class="fa-solid fa-circle-info fa-2x" id="modal-trigger"></i>
       </div>
     </section>
-    <div class="box1 sb4"><p>What to learn more?</p>
-      <p>Click the Chart to get more information!</p></div>
+    <div class="box1 sb4">
+      <p>Click on the button to flip the graph!</p>
+      <button id="card-button">More Info</button>
+    </div>
     <div class="container">
       <section class="section is-large p-0 level is-justify-content-space-evenly">
-        <div class="scene scene--card" onclick="TestsFunction()">
+        <div class="scene scene--card">
           <div class="card">
             <div class="card__face card__face--front">
               <div class="level-left background is-flex-direction-column" style="width:900px;">
@@ -36,28 +41,32 @@
               </div>
             </div>
             <div class="card__face card__face--back">
-              <div id="TestsDiv" style="display:none">
-                tests here!
-                <p>Test There</p>
-                <p>Test There</p>
-                <p>Test There</p>
-            </div>
+              <div id="flip-div" style="display:none">
+
+                    <div id="map"></div>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpnm5wno
+                    PkgyE6UN2iGGVUb6VRJgASi90&callback=initMap" async>
+                    </script>
+              </div>
             </div>
           </div>
         </div>
         <div class="level-right is-flex-direction-column background" id="polar-container" style="width: 400px;">
-          <select class="mt-2" id="city-selector">
-            <option value="atlanta">Atlanta</option>
-            <option value="albuquerque">Albuquerque</option>
-            <option value="charleston">Charleston</option>
-            <option value="chicago">Chicago</option>
-            <option value="houston">Houston</option>
-            <option value="los-angeles">Los Angeles</option>
-            <option value="miami">Miami</option>
-            <option value="new-york">New York</option>
-            <option value="richmond">Richmond</option>
-            <option value="seattle">Seattle</option>
-          </select>
+                  <select class="mt-2" id="city-selector">
+                    <option value="atlanta">Atlanta</option>
+                    <option value="albuquerque">Albuquerque</option>
+                    <option value="charleston">Charleston</option>
+                    <option value="chicago">Chicago</option>
+                    <option value="houston">Houston</option>
+                    <option value="los-angeles">Los Angeles</option>
+                    <option value="miami">Miami</option>
+                    <option value="new-york">New York</option>
+                    <option value="richmond">Richmond</option>
+                    <option value="seattle">Seattle</option>
+                  </select>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -79,35 +88,47 @@
             <button id="delete" aria-label="close"><i class="fa-solid fa-xmark"></i></button>
           </header>
           <section class="modal-card-body">
+            <p>
+              &#x2022; City Specs displays data for cities across the United States
+            </p>
+            <p>
+              &#x2022; The bar graph provides listing prices for homes that have a property
+              size of roughly 2500 sq ft.
+            </p>
+            <p>
+              &#x2022; The chart to the right displays scores for different urban
+              areas provided by the Teleport API. Each score is out of 10. 1 being
+              a poor performer and 10 being excellent.
+            </p>
+            <p>
+              &#x2022; If you'd like to get more information about any of the specific properties,
+              simply click on the graph
+            </p>
           </section>
         </div>
-        <button class="modal-close is-large" aria-label="close"></button>
       </div>
       <script alt="event listener for card flip animation">
-        let cards = document.querySelectorAll('.card');
-
-        [...cards].forEach((card)=>{
-          card.addEventListener( 'click', function() {
-          card.classList.toggle('is-flipped');
-          });
-        });
-
-        function TestsFunction() {
-          let T = document.getElementById("TestsDiv");
+        // let cards = document.querySelectorAll('.card');
+        // [...cards].forEach((card)=>{
+          let flip = document.getElementById("flip-div");
           let graph = document.getElementById("bar-chart")
           let backFace = document.getElementById("card__face")
           // debugger
-          if(T.style.display === "none"){
-            T.style.display = "block";
-            graph.style.display = "none"
-            // graph.style.height = "450px" // <-- Set it to block
-          } else if(T.style.display ==="block") {
-            T.style.display = "none"
-            graph.style.display = "block"
-            // backFace.style.height = "450px"
-          }
-        }
-        // card flip animation : codepen by Amit Mondal
+          let button = document.getElementById('card-button')
+          button.addEventListener( 'click', function() {
+            let cards = document.querySelectorAll('.card');
+            [...cards].forEach((card) => {
+              card.classList.toggle('is-flipped');
+
+              if(flip.style.display === "none"){
+                flip.style.display = "block";
+                graph.style.display = "none"
+              } else if(flip.style.display ==="block") {
+                flip.style.display = "none"
+                graph.style.display = "block"
+              }
+            })
+          });
       </script>
   </body>
   </html>

@@ -1,34 +1,35 @@
 
 {
-    "nyHousing": {
+    "newYork": {
         "price": 1369000,
         "bathrooms": 3,
         "bedrooms": 4,
         "squareFootage": 2220,
-        "id": "151 Barlow Dr S, Brooklyn, NY 11234"
+        "id": "151 Barlow Dr S, Brooklyn, NY 11234",
+        "img": "https://photos.zillowstatic.com/fp/1bcfc530ae43467c99ff085a5b433393-uncropped_scaled_within_1536_1152.webp"
 },
-"laHousing": {
+"la": {
     "price": 1995000,
     "bedrooms": 2,
     "bathrooms": 2,
     "squareFootage": 2024,
     "address": "459 S Hamel Rd, Los Angeles, CA 90048"
 },
-"bostonHousing": {
+"boston": {
     "price": 550000,
     "bedrooms": 3,
     "bathrooms": 2,
     "squareFootage": 2446,
     "address": "31 Bradlee St, Hyde Park, MA 02136"
 },
-"phoenixHousing":{
+"phoenix":{
     "price": 450000,
     "bedrooms": 3,
     "bathrooms": 3,
     "squareFootage": 2214,
     "address": "3244 W Maldonado Rd, Phoenix, AZ 85041"
 },
-"houstonHousing":{
+"houston":{
     "price": 299000,
     "bedrooms": 4,
     "bathrooms": 3,
@@ -42,105 +43,107 @@
     "squareFootage": 2101,
     "address": "7818 N CEZANNE DR, JACKSONVILLE, FL 32221"
 },
-"richmondHousing": {
+"richmond": {
     "price": 467000,
     "bedrooms": 4,
     "bathrooms": 3,
     "squareFootage": 2100,
     "address": "3447 Blithewood Dr, Richmond, VA 23225"
 },
-"charlestonHousing":{
+"charleston":{
     "price": 349900,
     "bedrooms": 5,
     "bathrooms": 3,
     "squareFootage": 2054,
     "address": "3509 Johan Blvd, Johns Island, SC 29455"
 },
-"altantaHousing":{
+"altanta":{
     "price": 390000,
     "bedrooms": 5,
     "bathrooms": 3,
     "squareFootage": 2495,
     "address": "3156 Esha Ct SW, Atlanta, GA 30311"
 },
-"newOrleansHousing": {
+"newOrleans": {
     "price": 395000,
     "bedrooms": 4,
     "bathrooms": 2,
     "squareFootage": 2103,
     "address": "3925 Fairmont Dr, New Orleans, LA 70122"
 },
-"miamiHousing": {
+"miami": {
     "price": 465000,
     "bedrooms": 3,
     "bathrooms": 2,
     "squareFootage": 2298,
     "address": "2746 NW 16th St, Miami, FL 33125"
 },
-"albuquerqueHousing":{
+"albuquerque":{
     "price": 389900,
     "bedrooms": 4,
     "bathrooms": 2,
     "squareFootage": 2198,
-    "address": "2704 Palo Alto Dr NE, Albuquerque, NM 87112"
+    "address": "2704 Palo Alto Dr NE, Albuquerque, NM 87112",
+    "lat": 35.11088,
+    "lng": -106.49516
 },
-"seattleHousing":{
+"seattle":{
     "price": 999500,
     "bedrooms": 4,
     "bathrooms": 2,
     "squareFootage": 2118,
     "address": "9323 Forest Court SW, Seattle, WA 98136"
 },
-"portlandOrHousing": {
+"portlandOr": {
     "price": 515000,
     "bedrooms": 3,
     "bathrooms": 2,
     "squareFootage": 2088,
     "address": "5523 SE Cesar E Chavez Blvd, Portland, OR 97202"
 },
-"boiseHousing": {
+"boise": {
     "price": 426000,
     "bedrooms": 4,
     "bathrooms": 2,
     "squareFootage": 2076,
     "address": "7530 W Cherrywood Dr, Boise, ID 83704"
 },
-"chicagoHousing": {
+"chicago": {
     "price": 259000,
     "bedrooms": 6,
     "bathrooms": 2,
     "squareFootage": 2240,
     "address": "2740 N Mobile Ave, Chicago, IL 60639"
 },
-"memphisHousing": {
+"memphis": {
     "price": 330000,
     "bedrooms": 4,
     "bathrooms": 2,
     "squareFootage": 2000,
     "address": "7073 Beartown Cv, Memphis, TN 38133"
 },
-"louisvilleHousing":{
+"louisville":{
     "price": 285000,
     "bedrooms": 3,
     "bathrooms": 2,
     "squareFootage": 2222,
     "address": "6000 Dutchmans Ln, Louisville, KY 40205"
 },
-"sanDiegoHousing":{
+"sanDiego":{
     "price": 2046,
     "bedrooms": 4,
     "bathrooms": 2,
     "squareFootage": 2046,
     "address": "137 San Jacinto Dr, San Diego, CA 92114"
 },
-"desMoinesHousing": {
+"desMoines": {
     "price": 339000,
     "bedrooms": 3,
     "bathrooms": 2,
     "squareFootage": 2118,
     "address": "1520 41st Pl, Des Moines, IA 50311"
 },
-"omahaHousing": {
+"omaha": {
     "price": 260000,
     "bedrooms": 3,
     "bathrooms": 2,
