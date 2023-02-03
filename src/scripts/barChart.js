@@ -6,7 +6,7 @@ import * as data from '../housing_data.json'
 
 export const barChart = async() => {
   const ctx = document.getElementById('bar-chart')
-  
+
   new chartTools.Chart(ctx, {
     type: 'bar',
     data: {
@@ -14,10 +14,10 @@ export const barChart = async() => {
       'Los Angeles', 'Miami', 'New York', 'Richmond', 'Seattle'],
       datasets: [{
         label: 'Listing Price',
-        data: [data.altantaHousing.price, data.albuquerqueHousing.price,
-        data.charlestonHousing.price, data.chicagoHousing.price, data.houstonHousing.price,
-          data.laHousing.price, data.miamiHousing.price, data.nyHousing.price,
-          data.richmondHousing.price, data.seattleHousing.price],
+        data: [data.altanta.price, data.albuquerque.price,
+        data.charleston.price, data.chicago.price, data.houston.price,
+          data.la.price, data.miami.price, data.newYork.price,
+          data.richmond.price, data.seattle.price],
         borderWidth: 1,
         backgroundColor: [
           'rgba(75, 192, 192, 0.7)',
