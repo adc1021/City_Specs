@@ -6,12 +6,6 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (1) ***!
   \*****************************************************************************************************************************************/
 @charset "UTF-8";
-#map {
-  height: 450px;
-  width: 450px;
-  overflow: hidden !important;
-}
-
 h1.box {
   border: 3px solid rgb(172, 170, 190);
   font-family: "Catamaran", sans-serif;
@@ -91,6 +85,12 @@ section {
   border-radius: 5px;
   z-index: 15;
   box-shadow: 0 0.5em 1em 0.625em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+}
+
+#map {
+  height: 450px;
+  width: 900px;
+  overflow: hidden !important;
 }
 
 #modal-trigger {

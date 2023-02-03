@@ -127,6 +127,13 @@ section {
     box-shadow: 0 0.5em 1em 0.625em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
 }
 
+#map {
+  height: 450px;
+  width: 900px;
+  overflow: hidden !important
+}
+
+
 #modal-trigger {
   background: none;
 }
