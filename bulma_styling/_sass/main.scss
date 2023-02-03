@@ -58,6 +58,22 @@ $box-color: $primary;
   font-family: arial;
   border-radius: 5px;
 }
+.box2 {
+  position: absolute;
+  z-index: 20;
+  background-color: red;
+  top: 50%;
+  right: 85px;
+  width: 200px;
+  height: 400px;
+  background: #00bfb6;
+  padding: 20px;
+  text-align: center;
+  font-weight: 900;
+  color: #fff;
+  font-family: arial;
+  border-radius: 5px;
+}
 
 .sb4:before {
   content: "";
@@ -69,6 +85,20 @@ $box-color: $primary;
   border-top: 10px solid #00bfb6;
   border-bottom: 10px solid transparent;
   right: 50px;
+  top: 135px;
+}
+
+.sb5::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #00bfb6;
+  border-bottom: 10px solid transparent;
+  rotate: 90deg;
+  right: 200px;
   top: 135px;
 }
 
