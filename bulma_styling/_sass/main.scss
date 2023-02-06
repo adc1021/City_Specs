@@ -228,6 +228,13 @@ body{
     top: 10%;
     left: 5%;
   }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 0;
+  }
 }
 @media (max-width: 1599px) {
   .section.is-large {
@@ -333,6 +340,9 @@ body{
   max-width: 636px;
   max-height: 264px;
 }
+
+
+
 
 
 // 4. Import the rest of Bulma
