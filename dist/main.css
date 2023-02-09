@@ -109,6 +109,14 @@ h1 {
   text-shadow: 2px 4px 4px rgba(46, 91, 173, 0.6);
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  top: 800px;
+  width: 100%;
+  z-index: 0;
+}
+
 section {
   z-index: 1;
 }
@@ -185,12 +193,6 @@ body {
   .box1 {
     top: 10%;
     left: 5%;
-  }
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    z-index: 0;
   }
 }
 @media (max-width: 1599px) {
@@ -292,6 +294,23 @@ body {
   max-height: 264px;
 }
 
+@media (min-width: 1865px) and (min-height: 1035px) {
+  #polar-container {
+    position: fixed;
+    height: 425px;
+    right: 15%;
+    top: 27%;
+    width: auto;
+  }
+  .scene {
+    position: fixed;
+    left: 15%;
+    top: 22%;
+  }
+  .footer {
+    top: 75%;
+  }
+}
 /*! bulma.io v0.9.4 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
 .pagination-previous,
