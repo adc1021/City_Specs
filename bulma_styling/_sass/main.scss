@@ -352,19 +352,42 @@ body{
   #polar-container {
     position: fixed;
     height: 425px;
-    right: 15%;
+    right: 8%;
     top: 27%;
     width: auto;
   }
 
   .scene {
     position: fixed;
-    left: 15%;
+    left: 10%;
     top: 22%;
+  }
+
+  #bar-chart {
+    width: 1100px !important;
+  }
+
+  .background {
+    width: 1100px !important;
   }
 
   .footer {
     top: 75%;
+  }
+
+  #map {
+    height: 550px !important;
+    width: 1100px !important;
+  }
+  
+  #acquisitions {
+    width: 550px !important;
+    height: 550px !important;
+  }
+
+  #polar-container {
+    height: 575px !important;
+    width: 550px !important;
   }
 }
 // 4. Import the rest of Bulma
