@@ -304,7 +304,7 @@ body {
   }
   .scene {
     position: fixed;
-    left: 10%;
+    left: 5%;
     top: 22%;
   }
   #bar-chart {
