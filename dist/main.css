@@ -309,6 +309,7 @@ body {
   }
   #bar-chart {
     width: 1100px !important;
+    height: 550px !important;
   }
   .background {
     width: 1100px !important;
@@ -327,6 +328,15 @@ body {
   #polar-container {
     height: 575px !important;
     width: 550px !important;
+  }
+  .box1 {
+    top: 15%;
+    position: fixed !important;
+  }
+  .box2 {
+    top: 50%;
+    right: 2%;
+    position: fixed !important;
   }
 }
 /*! bulma.io v0.9.4 | MIT License | github.com/jgthms/bulma */
